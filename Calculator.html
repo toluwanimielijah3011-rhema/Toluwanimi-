@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+  body {
+    background-color: black;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  .quantity {
+    background-color: black;
+    color: white;
+    padding: 50px;
+    font-size: 40px;
+    text-align: right;
+    margin-bottom: 15px;
+  }
+
+  .button {
+    background-color: #333;
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 25px;
+    margin: 5px;
+  }
+
+  .Orange-button {
+    background-color: orange;
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 25px;
+    margin: 5px;
+  }
+</style>
+</head>
+<body>
+ <div class="quantity">O</div>  
+ <button class="button" onclick="
+ calculation = '';
+ updateDisplay();
+ ">AC</button>
+ <button class="button" onclick="
+  calculation = String(-Number(calculation));
+  updateDisplay();
+">+/-</button>
+ <button class="button" onclick="
+  calculation = Number(calculation) / 100;
+  updateDisplay();
+">%</button>
+ <button class="Orange-button" onclick="
+ calculation += '/';
+ updateDisplay();
+ ">÷</button>
+     <br>
+     <button class="button" onclick="
+     calculation += '7';
+     updateDisplay();
+     ">7</button>
+     <button class="button" onclick="
+     calculation += '8';
+     updateDisplay();
+     ">8</button>
+     <button class="button" onclick="
+     calculation += '9';
+     updateDisplay();
+     ">9</button>
+     <button class="Orange-button" onclick="
+     calculation += '*';
+     updateDisplay();
+     ">×</button>
+     <br>
+     <button class="button" onclick="
+     calculation += '4';
+     updateDisplay();
+     ">4</button>
+     <button class="button" onclick="
+     calculation += '5';
+     updateDisplay();
+     ">5</button>
+     <button class="button" onclick="
+     calculation += '6';
+     updateDisplay();
+     ">6</button>
+     <button class="Orange-button" onclick="
+     calculation += '-';
+     updateDisplay();
+     ">-</button>
+     <br>
+     <button class="button" onclick="
+     calculation += '1';
+     updateDisplay();
+     ">1</button>
+     <button class="button" onclick="
+     calculation += '2';
+     updateDisplay();
+     ">2</button>
+     <button class="button" onclick="
+     calculation += '3';
+     updateDisplay();
+     ">3</button>
+     <button class="Orange-button" onclick="
+     calculation += '+';
+     updateDisplay();"
+     >+</button>
+     <br>
+     <button class="button" onclick="
+     calculation += '0';
+     updateDisplay();
+     ">0</button>
+     <button class="button" onclick="
+     calculation += '.';
+     updateDisplay();
+     ">.</button>
+     <button class="button" onclick="
+     calculation = calculation.slice(0,-1);
+     updateDisplay();
+     ">CE</button>
+     <button class="Orange-button" onclick="
+  calculation = eval(calculation);
+  updateDisplay();
+">
+  =
+</button>
+     <script>
+  let calculation = '';
+
+  function updateDisplay() {
+    document.querySelector(".quantity").innerHTML = calculation;
+  }
+</script>
+</body>
+</html>
